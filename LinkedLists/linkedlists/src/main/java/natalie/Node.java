@@ -1,10 +1,10 @@
 package natalie ; 
 public class Node<E> 
 {
-    private E element ;
-    private Node<E> next ;
+    public E element ;
+    public Node<E> next ; // next is an element of the node, not a variable itself
 
-    public Node(E element, Node<E> next)
+    public Node(E element)
     {
         this.element = element ;
         this.next = null ;
