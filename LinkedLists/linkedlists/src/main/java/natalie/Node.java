@@ -1,9 +1,9 @@
 package natalie ; 
 public class Node<E> 
 {
-    public E element ;
-    public Node<E> next ; // next is an element of the node, not a variable itself
-    public Node<E> previous ;
+    private E element ;
+    private Node<E> next ; // next is an element of the node, not a variable itself
+    private Node<E> previous ;
 
     public Node(E element)
     {
@@ -38,7 +38,7 @@ public class Node<E>
     {
         return this.previous ;
     }
-    
+
     public static void main(String[] args) 
     {
         
