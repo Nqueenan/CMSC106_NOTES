@@ -3,11 +3,13 @@ public class Node<E>
 {
     public E element ;
     public Node<E> next ; // next is an element of the node, not a variable itself
+    public Node<E> previous ;
 
     public Node(E element)
     {
         this.element = element ;
         this.next = null ;
+        this.previous = null ;
     }
 
     // setters
@@ -19,6 +21,10 @@ public class Node<E>
     {
         this.next = next ;
     }
+    public void setPrevious(Node<E> previous)
+    {
+        this.previous = previous ;
+    }
     // getters
     public E getElement()
     {
@@ -28,6 +34,11 @@ public class Node<E>
     {
         return this.next ;
     }
+    public Node<E> getPrevious()
+    {
+        return this.previous ;
+    }
+    
     public static void main(String[] args) 
     {
         
