@@ -27,6 +27,9 @@ public class Main
     public static void main(String[] args) 
     {
         printFruit(Fruit.APPLE) ;
+
+        // This is where we did run configuration and edited arguments to say hello world, then printed args[0]
+        System.out.println(args[0]) ;
         
     }
 }
