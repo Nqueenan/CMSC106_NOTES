@@ -37,6 +37,11 @@ public class ArrayStack<E> implements Stack<E>
         }
         return false ;
     }
+    public static void main(String[] args) 
+    {
+        ArrayStack <String> stack = new ArrayStack<String>(5) ; // She made her constructor take capacity thats why its giving error
+        stack.push("A") ;
 
+    }
 
 }
