@@ -1,7 +1,49 @@
 package natalie;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+public class ArrayStack<E> implements Stack<E>
+{
+    // Look @ her notes
+    private E[] array ;
+    private E topE ;
+    private int size ;
+    public static final int CAPACITY = 1000 ; 
+    public ArrayStack (E[] array, int size)
+    {
+        array = (E[]) new Object[CAPACITY] ;
+        this.size = 0 ;
     }
+    public void push(E element)
+    {
+        array[size] = element ;
+        size ++ ;
+    }
+    public E pop()
+    {
+        return array[size-1] ;
+        array[size-1] = null ;
+        size = size -1 ;
+    }
+    public E top()
+    {
+        return array[size] ;
+    }
+    public int size()
+    {
+        return size ;
+    }
+    public boolean isEmpty()
+    {
+        if (size == 0)
+        {
+            return true ;
+        }
+        return false ;
+    }
+    public static void main(String[] args) 
+    {
+        ArrayStack <String> stack = new ArrayStack<String>(5) ; // She made her constructor take capacity thats why its giving error
+        stack.push("A") ;
+
+    }
+
 }
