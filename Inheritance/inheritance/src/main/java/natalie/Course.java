@@ -38,6 +38,7 @@ public class Course {
     public static void main(String[] args) 
     {
         Course testCourse = new Course("Probability", 218) ;
+        testCourse.setName("bye") ;
         System.out.println(testCourse.getName()) ;
     }
 }
