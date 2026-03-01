@@ -1,4 +1,6 @@
 natalie\Main.class
 natalie\Enum.class
+natalie\UsingException.class
 natalie\Array.class
+natalie\NotMyNameException.class
 natalie\Enum$College.class
