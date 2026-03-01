@@ -24,7 +24,7 @@ public class CSCourse extends Course implements Comparable<CSCourse>
     @Override
     public String toString()
     {
-        String str = CSCourse.dept + getNumber() + ", " + getName() + ". Lab Section: " + labSection ;
+        String str = CSCourse.dept + this.getNumber() + ", " + this.getName() + ". Lab Section: " + this.labSection ;
         return str ;
     }
 

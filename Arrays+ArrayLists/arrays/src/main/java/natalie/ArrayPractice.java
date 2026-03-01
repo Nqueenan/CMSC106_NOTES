@@ -6,7 +6,7 @@ public class ArrayPractice
     // Can also have arrays of objects or enums 
 
     private int[] integerArray ; // declaring array
-    private String[] stringArray = {"hi", "bye"} ; // declaring and initializing in same step
+    private String[] stringArray = new String[]{"hi", "bye"} ; // declaring and initializing in same step
     private double[] doubleArray = new double[2] ; // declaring and initializing in same step
     private float[] floatArray ;
     private static int[] arr3 ;
@@ -34,6 +34,7 @@ public class ArrayPractice
         //System.out.println(integerArray.length) ; // This doesnt work because I need to either make array static or assign it to an object
         ArrayPractice object = new ArrayPractice() ; // making an object so i can get array values idk
         System.out.println(object.integerArray.length) ;
+        System.out.println(object.floatArray[0]) ;
         System.out.println(arr3) ;
         
         // just making a local array, for when I don't need outside of this
