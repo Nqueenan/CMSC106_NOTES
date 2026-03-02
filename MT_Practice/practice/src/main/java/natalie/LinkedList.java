@@ -55,6 +55,42 @@ public class LinkedList<E>
         current.setNext(newNode) ;
         size ++ ;
     }
+    
+    public boolean compare(LinkedList<E> list2)
+    {
+        if (list2 == null)
+        {
+            return false ;
+        }
+        if (this.size != list2.size)
+        {
+            return false ;
+        }
+        Node<E> current1 = this.head.getNext() ;
+        Node<E> current2 = list2.head.getNext() ;
+        while (current1 != tail)
+        {
+            if (!current1.getElement().equals(current2.getElement()))
+            {
+                return false ;
+            }
+            current1 = current1.getNext() ;
+            current2 = current2.getNext() ;
+        }
+        return true ;
+    }
+
+    public LinkedList<E> deepCopy()
+    {
+        LinkedList<E> listCopy = new LinkedList<E>() ;
+        Node<E> current = this.head.getNext() ;
+        while (current != tail)
+        {
+            listCopy.addEnd(current.getElement()) ;
+            current = current.getNext() ;
+        }
+        return listCopy ;
+    }
 
     @Override
     public String toString()
@@ -72,12 +108,23 @@ public class LinkedList<E>
 
     public static void main(String[] args) 
     {
-        LinkedList<String> list = new LinkedList<String>() ;
-        list.addEnd("first") ;
-        list.addEnd("second") ;
-        list.addEnd("third") ;
-        list.addFront("front") ;
-        list.addHere("front", "after front") ;
-        System.out.println(list) ;
+        LinkedList<String> list1 = new LinkedList<String>() ;
+        list1.addEnd("first") ;
+        list1.addEnd("second") ;
+        list1.addEnd("third") ;
+        list1.addFront("front") ;
+        list1.addHere("front", "after front") ;
+        System.out.println(list1) ;
+
+        LinkedList<String> list2 = new LinkedList<String>() ;
+        list2.addEnd("first") ;
+        list2.addEnd("second") ;
+        list2.addEnd("third") ;
+        list2.addFront("front") ;
+        //list2.addHere("front", "after front") ;
+        System.out.println(list1.compare(list2)) ;
+        //System.out.println(list2) ;
+        LinkedList<String> list3 = list2.deepCopy() ;
+        System.out.println(list3) ;
     }
 }
