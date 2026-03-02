@@ -28,16 +28,43 @@ public class LinkedList<E>
         tail.setPrev(newNode) ;
         size ++ ;
     }
+    public void addFront(E element)
+    {
+        Node<E> newNode = new Node<E>(element) ;
+        Node<E> next = head.getNext() ;
+        newNode.setNext(next) ;
+        newNode.setPrev(head) ;
+        head.setNext(newNode) ;
+        next.setPrev(newNode) ;
+        size ++ ;
+    }
+    
+    public void addHere(E existing, E newElement)
+    {
+        Node<E> newNode = new Node<E>(newElement) ;
+        Node<E> current = head ;
+        current = current.getNext() ;
+        while (current.getElement() != existing)
+        {
+            current = current.getNext() ;
+        }
+        Node<E> after = current.getNext() ;
+        newNode.setNext(after) ;
+        newNode.setPrev(current) ;
+        after.setPrev(newNode) ;
+        current.setNext(newNode) ;
+        size ++ ;
+    }
 
     @Override
     public String toString()
     {
         Node<E> current = head ;
-        current = current.getNext() ;
         String string = "" ;
-        while (current.getNext() != tail)
+        current = current.getNext() ;
+        while (current != tail)
         {
-            string = string + String.valueOf(current.getElement()) ;
+            string = string + " " + String.valueOf(current.getElement()) ;
             current = current.getNext() ;
         }
         return string ;
@@ -49,6 +76,8 @@ public class LinkedList<E>
         list.addEnd("first") ;
         list.addEnd("second") ;
         list.addEnd("third") ;
+        list.addFront("front") ;
+        list.addHere("front", "after front") ;
         System.out.println(list) ;
     }
 }
