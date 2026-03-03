@@ -54,7 +54,7 @@ public class CSCourse extends Course implements Comparable<CSCourse>
     @Override
     public int compareTo(CSCourse course)
     {
-        if (this.number < course.number)
+        if (this.getNumber() < course.getNumber())
         {
             return -1 ;
         }
